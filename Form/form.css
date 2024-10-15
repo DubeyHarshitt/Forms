@@ -1,0 +1,57 @@
+.form {
+  margin: 10px auto;
+  padding: 10px 20px;
+  background: rgba(0, 0, 0, 0.819);
+  border-radius: 8px;
+  font-family: 'Nunito', sans-serif;
+  color: #f4f7f8;
+  width: 90%;
+}
+
+.row-group {
+  display: flex;
+  justify-content:space-evenly;
+  gap: 20px;
+}
+
+.form-group {
+  width: 45%;
+  margin-bottom: 20px;
+}
+
+input[type="number"], select {
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  font-size: 16px;
+  padding: 15px;
+  width: 100%;
+  background-color: #e8eeef;
+  color: #8a97a0;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.03) inset;
+  margin-bottom: 10px;
+}
+
+.button {
+  padding: 15px 35px;
+  color: black;
+  background-color: rgb(158, 179, 210);
+  font-size: 18px;
+  border-radius: 5px;
+  width: 50%;
+  margin-left: 25%;
+}
+
+.button:hover {
+  background-color: rgba(14, 150, 208, 0.479);
+  color: rgb(231, 231, 231);
+}
+
+label {
+  margin-bottom: 8px;
+  display: block;
+}
+
+.btnDiv{
+  display: flex;
+  align-items: center;
+}

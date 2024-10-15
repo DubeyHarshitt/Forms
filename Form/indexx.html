@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <div class="title">Predict Results</div>
+        <form action="{% url 'predict' %}" method="POST" class="form">
+          <div class="user__details">
+            <div class="input__box">
+              <span class="details">SSC Percentage:</span>
+              <input type="number" step="0.01" name="ssc" id="ssc" value="{{ request.POST.ssc }}"placeholder="Enter Your SSC Marks" required>
+            </div>
+            <div class="input__box">
+              <span class="details">HSC Percentage</span>
+              <input type="number" step="0.01" name="hsc" id="hsc" value="{{ request.POST.hsc }}"  placeholder="Enter Your HSC Marks "required>
+            </div>
+            <div class="input__box">
+              <span class="details">Degree CGPA:</span>
+              <input type="number" step="0.01" name="cgpa" id="cgpa" value="{{ request.POST.cgpa }} " placeholder="Enter Your Degere CGPA" required>
+            </div>
+            <div class="input__box">
+              <span class="details">Aptitude Test Score:</span>
+              <input type="number" step="0.01" name="aptitude" id="aptitude" value="{{ request.POST.aptitude }}" placeholder="Enter Your aptitude Score" required>
+            </div>
+            <div class="input__box">
+              <span class="details">Number of Projects:</span>
+              <input type="number" name="projects" id="projects" value="{{ request.POST.projects }}" placeholder="Enter Number Of Projects"required>
+            </div>
+            <div class="input__box">
+              <span class="details">Number of Workshops/Certifications:</span>
+              <input type="number" id="workshops" name="workshops" min="1" step="1" inputmode="numeric" value="{{ request.POST.workshops }}" placeholder="Enter Number of Workshops" required>
+            </div>
+            <div class="input__box">
+                <span class="details">Soft Skills Rating (out of 5):</span>
+                <input type="number" name="softskills" id="softskills" min="0" max="5" step="0.01" inputmode="numeric" value="{{ request.POST.softskills }}" placeholder="Rate your softskills" required>
+              </div>
+              <div class="input__box">
+                <span class="details">Extracurricular Activities:</span>
+                <select name="extra" id="extra" required>
+                    <option value="1" {% if request.POST.extra == "1" %}selected{% endif %}>Yes</option>
+                    <option value="0" {% if request.POST.extra == "0" %}selected{% endif %}>No</option>
+                </select>
+              </div>
+              <div class="input__box">
+                <span class="details">Placement Training:</span>
+                <select name="training" id="training" required>
+                    <option value="1" {% if request.POST.training == "1" %}selected{% endif %}>Yes</option>
+                    <option value="0" {% if request.POST.training == "0" %}selected{% endif %}>No</option>
+                </select>
+              </div>
+              <div class="input__box">
+                <span class="details">Number of Internships:</span>
+                <input type="number" name="internships" id="internships" value="{{ request.POST.internships }}" placeholder="Enter Number Of Internships" required>
+              </div>
+          </div>
+          
+          <div class="button">
+            <input type="submit" value="Predict" >
+          </div>
+        </form>
+      </div>
+</body>
+</html>
